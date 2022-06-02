@@ -16,7 +16,7 @@ services:
         networks:
             - clarusnet
     app-server:
-        env_file: .env 
+        env_file: .env
         image: "${ECR_REPO}:latest"
         deploy:
             mode: global
@@ -30,6 +30,7 @@ services:
             - clarusnet
 networks:
     clarusnet:
+        driver: overlay
 
 volumes:
     db-data:
@@ -37,4 +38,3 @@ volumes:
 configs:
     table:
         file: ./init.sql
-
