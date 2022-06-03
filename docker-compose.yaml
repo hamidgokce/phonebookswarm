@@ -30,7 +30,6 @@ services:
             - clarusnet
 networks:
     clarusnet:
-        driver: overlay
 
 volumes:
     db-data:
